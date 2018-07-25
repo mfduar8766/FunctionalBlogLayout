@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.news {
+    text-align: center;
+    background: lightgray;
+    padding: 1rem;
+    width: 30%;
+    height: 30%;
+    box-shadow: 0 0 20px black;
+}

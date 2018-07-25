@@ -33,6 +33,8 @@ body,html {
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .body {
@@ -53,4 +55,34 @@ body,html {
 
 .paragraph {
     padding: 1rem;
+}
+
+.contact {
+    display: flex;
+    box-shadow: 0 0 20px black;
+    background: lightgray;
+    justify-content: space-around;
+    height: 50%;
+    width: 50%;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.social {
+   display: flex;
+}
+
+.fa-facebook {
+    margin-right: 1rem;
+    color: rgb(59, 89, 152);
+}
+
+.fa-twitter {
+    margin-right: 1rem;
+    color:rgb(29, 202, 255);
+}
+
+.fa-instagram {
+    margin-right: 1rem;
+    color: #e4405f;
 }
