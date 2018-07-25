@@ -74,50 +74,51 @@ for (var img of topImg) {
 }
 
 for(var i=0; i<images.length; i++) {
-    var img = images[i];
-    var newImg = document.createElement("img");
-    newImg.setAttribute("src", img.url);
+    (function() {
+      var imageFomImgObj = images[i];
+      var newImg = document.createElement("img");
+      newImg.setAttribute("src", imageFomImgObj.url);
 
-    var caption = document.createElement("p");
-    caption.textContent = img.caption;
-
-    newImg.setAttribute('data-index', i);
-    newImg.addEventListener("click", open);
-
-    var button = document.createElement("button");
-    button.textContent = "Click Me";
-    button.classList.add("btn");
-
-    var listItem = document.createElement("li");
-    listItem.appendChild(newImg);
-    listItem.classList.add("main-img-list", "scale-up");
-    listItem.appendChild(caption);
-    listItem.appendChild(button);
-    container.appendChild(listItem);
-}
-
-function open(e) {
-    var imgIndex = e.currentTarget.getAttribute('data-index');
-    var imgCopy = document.querySelector('.newIMG');
-    var image = images[imgIndex];
-    var imgHeader = document.querySelector('.img-header');
-    imgHeader.textContent=image.caption;
-    imgCopy.setAttribute('src', image.url);
-    var modal = document.querySelector('.img-container');
-    modal.classList.add('show');                
-    body = document.querySelector("body").style.backgroundColor = "rgba(0,0,0,0.5)";
-};
-
-var btn = document.querySelector('.closeBTN');
-btn.addEventListener('click',close);
-
-function close(e) {
-    e.currentTarget=btn;
-    var btn = document.querySelector('.closeBTN');
-    
-    if(btn) {
+      var caption = document.createElement("p");
+      caption.textContent = imageFomImgObj.caption;
+      
+      var open = function() {
+        var imgCopy = document.querySelector('.newIMG');
+        var imgHeader = document.querySelector('.img-header');
+        imgHeader.textContent=imageFomImgObj.caption;
+        imgCopy.setAttribute('src', imageFomImgObj.url);
         var modal = document.querySelector('.img-container');
-        modal.classList.remove('show');                
-        body = document.querySelector("body").style.backgroundColor = "white";
-    }
+        modal.classList.add('show');                
+        body = document.querySelector("body").style.backgroundColor = "rgba(0,0,0,0.5)";
+      };
+
+      newImg.addEventListener("click", open);
+
+      var button = document.createElement("button");
+      button.textContent = "Click Me";
+      button.classList.add("btn");
+
+      var listItem = document.createElement("li");
+      listItem.appendChild(newImg);
+      listItem.classList.add("main-img-list", "scale-up");
+      listItem.appendChild(caption);
+      listItem.appendChild(button);
+      container.appendChild(listItem);
+
+      var close = function() {
+        var btn = document.querySelector('.closeBTN');
+        if(btn) {
+            var modal = document.querySelector('.img-container');
+            modal.classList.remove('show');                
+            body = document.querySelector("body").style.backgroundColor = "white";
+        }
+      }
+      var btn = document.querySelector('.closeBTN');
+      btn.addEventListener('click',close);
+    
+  })();
 }
+
+
+
+
