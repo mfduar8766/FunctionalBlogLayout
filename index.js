@@ -105,20 +105,15 @@ for(var i=0; i<images.length; i++) {
       listItem.appendChild(button);
       container.appendChild(listItem);
 
-      var close = function() {
-        var btn = document.querySelector('.closeBTN');
-        if(btn) {
-            var modal = document.querySelector('.img-container');
-            modal.classList.remove('show');                
-            body = document.querySelector("body").style.backgroundColor = "white";
-        }
-      }
       var btn = document.querySelector('.closeBTN');
+      var close = function() {
+        if(btn) {
+          var modal = document.querySelector('.img-container');
+          modal.classList.remove('show');                
+          body = document.querySelector("body").style.backgroundColor = "white";
+        } 
+      }
       btn.addEventListener('click',close);
-    
   })();
 }
-
-
-
 
