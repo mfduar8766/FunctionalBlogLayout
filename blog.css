@@ -87,9 +87,22 @@ body,html {
     color: #e4405f;
 }
 
+.fa-facebook:hover {
+    cursor: pointer;
+}
+
+.fa-instagram:hover {
+    cursor: pointer;
+}
+
+.fa-twitter:hover {
+    cursor: pointer;
+}
+
 .footer {
     display:flex;
     justify-content: center;
     color:black;
     font-size: 2rem;
 }
+

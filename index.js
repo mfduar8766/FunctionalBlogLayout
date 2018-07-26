@@ -73,7 +73,7 @@ for (var img of topImg) {
   container.appendChild(topContent);
 }
 
-images.forEach(function(imageFomImgObj, i) {
+images.forEach(function(imageFomImgObj) {
   var newImg = document.createElement("img");
   newImg.setAttribute("src", imageFomImgObj.url);
 
