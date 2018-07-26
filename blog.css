@@ -86,3 +86,10 @@ body,html {
     margin-right: 1rem;
     color: #e4405f;
 }
+
+.footer {
+    display:flex;
+    justify-content: center;
+    color:black;
+    font-size: 2rem;
+}
