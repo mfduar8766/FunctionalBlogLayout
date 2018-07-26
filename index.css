@@ -21,6 +21,25 @@ body,html {
     box-shadow: 0 0 20px black;
 }
 
+.fa-arrow-right {
+    padding: 1rem;
+    color: lightgray;
+}
+
+.fa-arrow-right:hover {
+    color: black;
+}
+
+.fa-arrow-left {
+    padding: 1rem;
+    color: lightgray;
+}
+
+.fa-arrow-left:hover {
+    color: black;
+}
+
+
 .show {
     display: flex;
 }

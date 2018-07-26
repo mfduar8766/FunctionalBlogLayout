@@ -82,7 +82,11 @@ for(var i=0; i<images.length; i++) {
       var caption = document.createElement("p");
       caption.textContent = imageFomImgObj.caption;
       
+      var rightArrow = document.querySelector('.arrow-right');
+      var arrowLeft = document.querySelector('.arrow-left');
+
       var open = function() {
+        var img = imageFomImgObj[i];
         var imgCopy = document.querySelector('.newIMG');
         var imgHeader = document.querySelector('.img-header');
         imgHeader.textContent=imageFomImgObj.caption;
@@ -90,13 +94,24 @@ for(var i=0; i<images.length; i++) {
         var modal = document.querySelector('.img-container');
         modal.classList.add('show');                
         body = document.querySelector("body").style.backgroundColor = "rgba(0,0,0,0.5)";
+
+        if(rightArrow) {
+          imageFomImgObj.url+=1;
+          imageFomImgObj.caption+=1;   
+        } else if(arrowLeft) {
+          imageFomImgObj.url-=1;
+          imageFomImgObj.caption-=1;
+        }
       };
 
-      newImg.addEventListener("click", open);
+      rightArrow.addEventListener('click', open);
+      arrowLeft.addEventListener('click', open);
 
       var button = document.createElement("button");
       button.textContent = "Click Me";
       button.classList.add("btn");
+
+      button.addEventListener("click", open);
 
       var listItem = document.createElement("li");
       listItem.appendChild(newImg);
@@ -113,7 +128,29 @@ for(var i=0; i<images.length; i++) {
           body = document.querySelector("body").style.backgroundColor = "white";
         } 
       }
-      btn.addEventListener('click',close);
+      btn.addEventListener('click',close);      
   })();
 }
 
+
+
+// var names = ['bob','john','jeff'];
+
+// var printName = function(name, i) {
+//   console.log(i + ':' + name.toUpperCase());
+// };
+
+// names.forEach(printName);
+
+// var fruits = ['apples', 'oranges', 'banana', 'cherry'];
+// fruits.forEach(fruit => {
+//     //check which fruit is not an apple and console.log the result.
+//     if(fruit != 'apples') {
+//       console.log(fruit);
+//     }
+// });
+
+// var number = [2,2,2,2];
+// var numberSqr = number.map(x => x*x);
+// console.log(number);
+// console.log(numberSqr);
